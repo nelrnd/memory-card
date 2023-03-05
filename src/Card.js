@@ -32,13 +32,13 @@ export default function Card({ symbol, handleClick }) {
 
   return (
     <div
-      className='card'
+      className='Card'
       onClick={handleClick}
       ref={cardRef}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <p className='card-symbol'>{symbol}</p>
+      <p className='Card-symbol'>{symbol}</p>
     </div>
   );
 }

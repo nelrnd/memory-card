@@ -49,7 +49,7 @@ export default function Board({ incrementScore, resetScore }) {
   useEffect(() => shuffleCards(), []);
 
   return (
-    <div className='board'>
+    <div className='Board'>
       {cards.map((card, id) => (
         <Card
           key={id}

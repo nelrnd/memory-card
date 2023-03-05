@@ -21,7 +21,7 @@ export default function App() {
   }
 
   return (
-    <div>
+    <div className='App'>
       <Header />
       <Scoreboard currentScore={currentScore} bestScore={bestScore} />
       <Board incrementScore={incrementScore} resetScore={resetScore} />

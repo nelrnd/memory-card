@@ -2,16 +2,58 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.board {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+html,
+body,
+#root {
+  height: 100%;
+}
+
+.App {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+}
+
+header,
+footer {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 1rem;
+  text-align: center;
+}
+
+header h1 {
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+footer img {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+  position: relative;
+  bottom: 2px;
+}
+
+footer a {
+  color: white;
+}
+
+.Board {
+  display: grid;
+  place-content: center;
+  grid-template-columns: repeat(4, auto);
+  gap: 1rem;
   perspective: 1500px;
 }
 
-.card {
+.Card {
   border: solid 3px rgba(0, 0, 0, 0.2);
   border-radius: 1rem;
   width: 6rem;
@@ -25,14 +67,24 @@
   transition-timing-function: ease-out;
 }
 
-.card:hover {
+.Card:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-.card.clicked {
-  background-color: aquamarine;
+.Card-symbol {
+  font-size: 2rem;
 }
 
-.card-symbol {
-  font-size: 2rem;
+.Scoreboard {
+  width: 300px;
+  margin: auto;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.Scoreboard p {
+  padding: 0.5rem;
+  outline: solid 1px black;
+  background-color: white;
 }
