@@ -54,7 +54,6 @@ export default function Board({ incrementScore, resetScore }) {
         <Card
           key={id}
           symbol={card.symbol}
-          clicked={card.clicked}
           handleClick={() => handleCardClick(card)}
         />
       ))}
