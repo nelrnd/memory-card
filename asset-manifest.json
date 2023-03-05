@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/memory-card/static/css/main.d1df83f4.css",
+    "main.js": "/memory-card/static/js/main.06aba292.js",
+    "static/media/github-icon.svg": "/memory-card/static/media/github-icon.8f167ef8b95eb47a2fd64d009157f2e5.svg",
+    "index.html": "/memory-card/index.html",
+    "main.d1df83f4.css.map": "/memory-card/static/css/main.d1df83f4.css.map",
+    "main.06aba292.js.map": "/memory-card/static/js/main.06aba292.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d1df83f4.css",
+    "static/js/main.06aba292.js"
+  ]
+}
