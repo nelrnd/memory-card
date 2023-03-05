@@ -1,5 +1,10 @@
-function App() {
-  return <h1>Hello?</h1>;
-}
+import Board from './Board';
+import './styles.css';
 
-export default App;
+export default function App() {
+  return (
+    <div>
+      <Board />
+    </div>
+  );
+}
