@@ -20,6 +20,10 @@
   cursor: pointer;
 }
 
+.card.clicked {
+  background-color: aquamarine;
+}
+
 .card-symbol {
   font-size: 2rem;
 }

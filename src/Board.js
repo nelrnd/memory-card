@@ -2,26 +2,20 @@ import { useState } from 'react';
 import Card from './Card';
 
 export default function Board() {
-  const symbols = [
-    '🍎',
-    '🍐',
-    '🍊',
-    '🍋',
-    '🍌',
-    '🍉',
-    '🍇',
-    '🍓',
-    '🍒',
-    '🍍',
-    '🍑',
-    '🥝',
-  ];
-
-  const [cards, setCards] = useState(
-    symbols.map((symbol, id) => (
-      <Card key={id} symbol={symbol} onClick={handleCardClick} />
-    ))
-  );
+  const [cards, setCards] = useState([
+    { symbol: '🍎', clicked: false },
+    { symbol: '🍐', clicked: false },
+    { symbol: '🍊', clicked: false },
+    { symbol: '🍋', clicked: false },
+    { symbol: '🍌', clicked: false },
+    { symbol: '🍉', clicked: false },
+    { symbol: '🍇', clicked: false },
+    { symbol: '🍓', clicked: false },
+    { symbol: '🍒', clicked: false },
+    { symbol: '🍍', clicked: false },
+    { symbol: '🍑', clicked: false },
+    { symbol: '🥝', clicked: false },
+  ]);
 
   function shuffleCards() {
     const cardsCopy = [...cards];
@@ -34,9 +28,21 @@ export default function Board() {
     setCards(cardsCopy);
   }
 
-  function handleCardClick() {
+  function handleCardClick(card) {
+    card.clicked = true;
     shuffleCards();
   }
 
-  return <div className='board'>{cards}</div>;
+  return (
+    <div className='board'>
+      {cards.map((card, id) => (
+        <Card
+          key={id}
+          symbol={card.symbol}
+          clicked={card.clicked}
+          handleClick={() => handleCardClick(card)}
+        />
+      ))}
+    </div>
+  );
 }

@@ -1,6 +1,6 @@
-export default function Card({ symbol, onClick }) {
+export default function Card({ symbol, clicked, handleClick }) {
   return (
-    <div className='card' onClick={onClick}>
+    <div className={clicked ? 'card clicked' : 'card'} onClick={handleClick}>
       <p className='card-symbol'>{symbol}</p>
     </div>
   );
