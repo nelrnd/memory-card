@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Header from './Header';
 import Scoreboard from './Scoreboard';
 import Board from './Board';
+import Footer from './Footer';
 import './styles.css';
 
 export default function App() {
@@ -24,6 +25,7 @@ export default function App() {
       <Header />
       <Scoreboard currentScore={currentScore} bestScore={bestScore} />
       <Board incrementScore={incrementScore} resetScore={resetScore} />
+      <Footer />
     </div>
   );
 }
