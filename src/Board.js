@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Card from './Card';
 
 export default function Board({ incrementScore, resetScore }) {
@@ -45,6 +45,8 @@ export default function Board({ incrementScore, resetScore }) {
     }
     shuffleCards();
   }
+
+  useEffect(() => shuffleCards(), []);
 
   return (
     <div className='board'>
