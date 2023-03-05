@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Header from './Header';
 import Scoreboard from './Scoreboard';
 import Board from './Board';
 import './styles.css';
@@ -20,6 +21,7 @@ export default function App() {
 
   return (
     <div>
+      <Header />
       <Scoreboard currentScore={currentScore} bestScore={bestScore} />
       <Board incrementScore={incrementScore} resetScore={resetScore} />
     </div>
