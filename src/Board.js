@@ -18,7 +18,9 @@ export default function Board() {
   ];
 
   const [cards, setCards] = useState(
-    symbols.map((symbol, id) => <Card key={id} symbol={symbol} />)
+    symbols.map((symbol, id) => (
+      <Card key={id} symbol={symbol} onClick={handleCardClick} />
+    ))
   );
 
   function shuffleCards() {
@@ -30,6 +32,10 @@ export default function Board() {
       cardsCopy[j] = temp;
     }
     setCards(cardsCopy);
+  }
+
+  function handleCardClick() {
+    shuffleCards();
   }
 
   return <div className='board'>{cards}</div>;
