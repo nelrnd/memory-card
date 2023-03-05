@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 
 export default function Card({ symbol, handleClick }) {
   const cardRef = useRef(null);
@@ -28,12 +28,16 @@ export default function Card({ symbol, handleClick }) {
   function handleMouseLeave() {
     document.removeEventListener('mousemove', rotateCard);
     cardRef.current.style.transform = '';
+    console.log('triggered');
   }
 
   return (
     <div
       className='Card'
-      onClick={handleClick}
+      onClick={() => {
+        handleMouseLeave();
+        handleClick();
+      }}
       ref={cardRef}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
