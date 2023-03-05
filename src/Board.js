@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Card from './Card';
 
-export default function Board() {
+export default function Board({ incrementScore, resetScore }) {
   const [cards, setCards] = useState([
     { symbol: '🍎', clicked: false },
     { symbol: '🍐', clicked: false },
@@ -28,8 +28,21 @@ export default function Board() {
     setCards(cardsCopy);
   }
 
+  function resetCardsClicked() {
+    const cardsCopy = [...cards];
+    for (const card of cardsCopy) {
+      card.clicked = false;
+    }
+  }
+
   function handleCardClick(card) {
-    card.clicked = true;
+    if (card.clicked) {
+      resetCardsClicked();
+      resetScore();
+    } else {
+      card.clicked = true;
+      incrementScore();
+    }
     shuffleCards();
   }
 
